@@ -1,0 +1,25 @@
+{
+  "name": "type-script-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "meow": "^7.0.0"
+  },
+  "bin": {
+    "toy-tree": "src/bin.js"
+  },
+  "devDependencies": {
+    "jest": "^27.0.4"
+  },
+  "jest": {
+    "setupFiles": ["./jest.setup.js"]
+  }
+}
