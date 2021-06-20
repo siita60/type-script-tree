@@ -1,14 +1,14 @@
-import { format } from '../format';
+import { format } from "../format";
 
 // 空のディレクトリ確認
-describe('format', () => {
-  test('only root', () => {
+describe("format", () => {
+  test("only root", () => {
     expect(
       format({
-        type: 'directory',
-        name: 'root',
+        type: "directory",
+        name: "root",
         children: [],
-      }),
+      })
     ).toMatchSnapshot();
   });
 });
