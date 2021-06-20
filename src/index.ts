@@ -1,8 +1,15 @@
 import meow from 'meow';
 import { read } from './read';
 import { format } from './format';
+import { DirectoryNode, Options } from './types';
 
-export const main = (argv, stdout, stderr) => {
+type Writer = (...args: any[]) => void;
+
+export const main = (
+  argv: string[],
+  stdout: Writer,
+  stderr: Writer,
+) => {
   const cli = meow(
     `
     Usage
@@ -22,7 +29,7 @@ export const main = (argv, stdout, stderr) => {
       argv,
     },
   );
-  const options = {
+  const options: Options = {
     level: cli.flags.level,
   };
   if (options.level < 1){
@@ -32,7 +39,7 @@ export const main = (argv, stdout, stderr) => {
 
   // ディレクトリの指定を取得。何もなければカレントを示す.
   const dir = cli.input[0] || '.';
-  let root;
+  let root: DirectoryNode;
 
   try{
     root = read(dir, options);

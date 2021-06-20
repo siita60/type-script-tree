@@ -2,9 +2,9 @@ import { main } from '../';
 
 // 空のディレクトリ確認
 describe('toy-tree', () => {
-  let stdout;
-  let stderr;
-  const exec = (argv) => main(argv, stdout, stderr);
+  let stdout: jest.Mock;
+  let stderr: jest.Mock;
+  const exec = (argv: string[]) => main(argv, stdout, stderr);
 
   beforeEach(() => {
     stdout = jest.fn();
