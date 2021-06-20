@@ -34,7 +34,15 @@ const readDirectory = (
           options
         ),
       });
-    }
+    } else if (dirent.isSymbolicLink()){
+      nodes.push({
+        type: 'symlink',
+        name: dirent.name,
+        link: fs.readlinkSync(
+          path.join(dir, dirent.name),
+        ),
+      });
+    };
   });
   
   return nodes;

@@ -12,8 +12,17 @@ export interface DirectoryNode extends BaseNode<'directory'>{
 }
 
 // tree構造の一部を示すものとして、ファイルもしくはディレクトリを示すことを明示する(union型というやつ)
-export type TreeNode = FileNode | DirectoryNode;
+// symlink追加
+export type TreeNode = 
+  FileNode 
+  | DirectoryNode
+  | SymlinkNode;
 
 export interface Options {
   level: number;
+}
+
+// symlink用の定義追加
+export interface SymlinkNode extends BaseNode<'symlink'>{
+  link: string
 }
