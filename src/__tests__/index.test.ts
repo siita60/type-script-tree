@@ -1,5 +1,4 @@
-const { TestWatcher } = require('jest');
-const { main } = require('../');
+import { main } from '../';
 
 // 空のディレクトリ確認
 describe('toy-tree', () => {

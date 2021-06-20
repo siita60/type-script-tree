@@ -1,4 +1,4 @@
-const { format } = require('../format');
+import { format } from '../format';
 
 // 空のディレクトリ確認
 describe('format', () => {

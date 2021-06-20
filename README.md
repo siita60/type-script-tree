@@ -9,5 +9,8 @@
   - https://jestjs.io/ja/docs/getting-started
   - yarnでインストールしろって書いてあるな...とりまnpmで。
 
+# ハマったこと
 
-
+- tsファイルが存在しないとディレクトリごと存在しない扱いになる
+  - refs: https://stackoverflow.com/questions/41211566/tsconfig-json-buildno-inputs-were-found-in-config-file
+  - 全然わからなくて辛かった
